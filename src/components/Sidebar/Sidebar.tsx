@@ -5,6 +5,7 @@ import logo from "../../assets/coneonlogo.svg";
 interface tabsProps {
   title: string;
   image: string;
+  imageA: string;
 }
 
 interface SidebarProps {
@@ -19,7 +20,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
   return (
     <>
       <div className="sidebar">
-        <img src={logo} alt="coneon logo" />
+        <img src={logo} alt="coneon logo" style={{ objectFit: "contain" }} />
         <div className="sidebar-alignOptions">
           {tabs.map((tab, index) => {
             return (
@@ -33,7 +34,11 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
                 }
                 onClick={() => handleSelect(index)}
               >
-                <img src={tab.image} alt="icon" className="sidebar-icon" />
+                <img
+                  src={selectedIndex === index ? tab.imageA : tab.image}
+                  alt="icon"
+                  className="sidebar-icon"
+                />
                 <div className="sidebar-title">{tab.title}</div>
               </div>
             );
