@@ -3,7 +3,6 @@ import "./Header.css";
 import searchLogo from "../../../assets/search logo.svg";
 import notification from "../../../assets/notification.svg";
 import userIcon from "../../../assets/user icon.svg";
-import arrowIcon from "../../../assets/arrow down.svg";
 
 const Header: React.FC = () => {
   return (
