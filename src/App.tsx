@@ -1,10 +1,14 @@
 import "./App.css";
 import DashboardContainer from "./containers/DashboardContainer/DashboardContainer";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const App: React.FC = () => {
   return (
     <>
-      <DashboardContainer />
+      <Router>
+        <Routes>
+          <Route path="/dashboard/*" element={<DashboardContainer />} />
+        </Routes>
+      </Router>
     </>
   );
 };

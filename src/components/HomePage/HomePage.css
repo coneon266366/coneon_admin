@@ -1,0 +1,70 @@
+.homepage {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.homepage-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 0rem;
+}
+
+.homepage-card {
+  background-color: #ffffff;
+  width: calc(16%);
+  box-sizing: border-box;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  box-shadow: 0px 4px 20px 0px #0000000d;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.homepage-cardTitle {
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.16px;
+  text-align: left;
+  color: #878787;
+  margin: 0;
+}
+
+.homepage-cardValue {
+  font-family: Outfit;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25.2px;
+  text-align: left;
+  color: #262626;
+  margin: 8px 0px 0px 0px;
+}
+
+.line-container {
+  display: flex;
+  gap: 2rem; /* Gap of 2 rem between each vertical line */
+  align-items: flex-end; /* Align lines to the bottom of the container */
+}
+
+.line {
+  width: 2px; /* Width of the vertical line */
+  background-color: black; /* Color of the vertical line */
+}
+
+.graph-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+margin: 0;
+  background-color: #f0f0f0;
+}
+
+svg {
+  border: 1px solid #ccc; /* Optional: Add border to visualize the SVG area */
+}

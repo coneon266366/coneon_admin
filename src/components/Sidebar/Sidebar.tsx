@@ -10,12 +10,12 @@ interface tabsProps {
 
 interface SidebarProps {
   tabs: tabsProps[];
-  selectedIndex: number;
+  getIsActive: (i: number) => boolean;
   handleSelect: (i: number) => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = (props) => {
-  const { tabs, selectedIndex, handleSelect } = props;
+  const { tabs, getIsActive, handleSelect } = props;
 
   return (
     <>
@@ -23,19 +23,20 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
         <img src={logo} alt="coneon logo" style={{ objectFit: "contain" }} />
         <div className="sidebar-alignOptions">
           {tabs.map((tab, index) => {
+            const isActive = getIsActive(index);
             return (
               <div
                 key={index}
                 className="sidebar-option"
                 style={
-                  selectedIndex === index
+                  isActive
                     ? { backgroundColor: "#2E4C7E", color: "#fff" }
                     : { backgroundColor: "#fff", color: "#878787" }
                 }
                 onClick={() => handleSelect(index)}
               >
                 <img
-                  src={selectedIndex === index ? tab.imageA : tab.image}
+                  src={isActive ? tab.imageA : tab.image}
                   alt="icon"
                   className="sidebar-icon"
                 />
