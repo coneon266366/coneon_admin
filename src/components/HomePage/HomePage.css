@@ -45,26 +45,60 @@
   margin: 8px 0px 0px 0px;
 }
 
-.line-container {
+.homepage-chart-div1 {
   display: flex;
-  gap: 2rem; /* Gap of 2 rem between each vertical line */
-  align-items: flex-end; /* Align lines to the bottom of the container */
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 2rem 0rem;
+  gap: 4rem;
+  height: 400px;
 }
 
-.line {
-  width: 2px; /* Width of the vertical line */
-  background-color: black; /* Color of the vertical line */
+.homepage-chart1 {
+  width: 60%;
+  height: 100%;
 }
 
-.graph-container {
+.homepage-progress-container {
+  position: relative;
+  width: 40%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-margin: 0;
-  background-color: #f0f0f0;
 }
 
-svg {
-  border: 1px solid #ccc; /* Optional: Add border to visualize the SVG area */
+.homepage-progress-bar1 {
+  width: 80%;
+  height: 100%;
+  border-radius: 50%;
+  color: #ffa756;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-progress-bar2 {
+  width: 65%;
+  height: 80%;
+  border-radius: 50%;
+  color: #ffa756;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* left: calc(10%); */
+}
+
+.homepage-progress-bar3 {
+  width: 50%;
+  height: 60%;
+  border-radius: 50%;
+  color: #ffa756;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* left: calc(10%); */
 }

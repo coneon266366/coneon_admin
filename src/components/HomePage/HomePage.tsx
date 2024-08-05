@@ -1,6 +1,13 @@
 import React from "react";
 import "./HomePage.css";
-import { AreaChart, XAxis, YAxis, Tooltip, Area } from "recharts";
+import LineChart from "./LineChart";
+
+interface dataProps {
+  name: string;
+  uv: number;
+  pv: number;
+  amt: number;
+}
 
 interface categoryProps {
   icon: string;
@@ -15,7 +22,7 @@ interface HomePageProps {
 const HomePage: React.FC<HomePageProps> = (props) => {
   const { categories } = props;
 
-  const data = [
+  const data: dataProps[] = [
     {
       name: "",
       uv: 0,
@@ -112,26 +119,35 @@ const HomePage: React.FC<HomePageProps> = (props) => {
             );
           })}
         </div>
-      </div>
 
-      <AreaChart width={700} height={400} data={data}>
-        <defs>
-          <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#5a8dee" stopOpacity={0.8} />
-            <stop offset="95%" stopColor="#5a8dee" stopOpacity={0} />
-          </linearGradient>
-        </defs>
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Area
-          type="monotone"
-          dataKey="pv"
-          stroke="#5a8dee"
-          fillOpacity={1}
-          fill="url(#colorPv)"
-        />
-      </AreaChart>
+        <div className="homepage-chart-div1">
+          <div className="homepage-chart1">
+            <LineChart data={data} />
+          </div>
+          <div className="homepage-progress-container">
+            <div
+              className="homepage-progress-bar1"
+              style={{
+                background: ` radial-gradient(closest-side, white 90%, transparent 91% 100%), conic-gradient(#ffa756 8%, #ebebeb 0)`,
+              }}
+            ></div>
+
+            <div
+              className="homepage-progress-bar2"
+              style={{
+                background: ` radial-gradient(closest-side, white 90%, transparent 91% 100%), conic-gradient(#ffa756 12%, #ebebeb 0)`,
+              }}
+            ></div>
+
+            <div
+              className="homepage-progress-bar3"
+              style={{
+                background: ` radial-gradient(closest-side, white 90%, transparent 91% 100%), conic-gradient(#ffa756 68%, #ebebeb 0)`,
+              }}
+            ></div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
