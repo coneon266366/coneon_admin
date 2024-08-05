@@ -1,14 +1,14 @@
 .sidebar {
   width: 100%;
   box-sizing: border-box;
-  padding: 2rem;
+  padding: 0.7rem 2rem 2rem 2rem;
 }
 
 .sidebar-alignOptions {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 2.4rem;
 }
 
 .sidebar-option {
