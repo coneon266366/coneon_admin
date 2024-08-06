@@ -73,17 +73,18 @@
   width: 80%;
   height: 100%;
   border-radius: 50%;
-  color: #ffa756;
+  color: #739ef1;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 1s ease-in;
 }
 
 .homepage-progress-bar2 {
   width: 65%;
   height: 80%;
   border-radius: 50%;
-  color: #ffa756;
+  color: #ff7374;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,7 +96,7 @@
   width: 50%;
   height: 60%;
   border-radius: 50%;
-  color: #ffa756;
+  color: #fdb85d;
   display: flex;
   justify-content: center;
   align-items: center;

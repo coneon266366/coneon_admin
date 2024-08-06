@@ -19,9 +19,11 @@ const HomePageContainer: React.FC = () => {
     { title: "Total Revenue", values: 3000, icon: icon3 },
   ];
 
+  const progress: number = 50;
+
   return (
     <>
-      <HomePage categories={categories} />
+      <HomePage categories={categories} progress={progress} />
     </>
   );
 };
