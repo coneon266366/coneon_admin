@@ -103,6 +103,8 @@ const LoginContainer: React.FC = () => {
         password: passwordError,
       });
     } else {
+      localStorage.setItem("isLoggedIn", "1");
+      navigate(Home);
       await handleLogin();
     }
   };
@@ -115,8 +117,6 @@ const LoginContainer: React.FC = () => {
         {}
       );
       console.log(response);
-      localStorage.setItem("isLoggedIn", "1");
-      navigate(Home);
     } catch (error) {
       console.error("Login failed:", error);
     }
