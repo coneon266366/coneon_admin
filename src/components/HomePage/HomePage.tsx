@@ -17,10 +17,11 @@ interface categoryProps {
 
 interface HomePageProps {
   categories: categoryProps[];
+  progress: number;
 }
 
 const HomePage: React.FC<HomePageProps> = (props) => {
-  const { categories } = props;
+  const { categories, progress } = props;
 
   const data: dataProps[] = [
     {
@@ -128,21 +129,19 @@ const HomePage: React.FC<HomePageProps> = (props) => {
             <div
               className="homepage-progress-bar1"
               style={{
-                background: ` radial-gradient(closest-side, white 90%, transparent 91% 100%), conic-gradient(#ffa756 8%, #ebebeb 0)`,
+                background: ` radial-gradient(closest-side, white 90%, transparent 91% 100%), conic-gradient(#739EF1 ${progress}%, #ebebeb 0)`,
               }}
             ></div>
-
             <div
               className="homepage-progress-bar2"
               style={{
-                background: ` radial-gradient(closest-side, white 90%, transparent 91% 100%), conic-gradient(#ffa756 12%, #ebebeb 0)`,
+                background: ` radial-gradient(closest-side, white 90%, transparent 91% 100%), conic-gradient(#FF7374 40%, #ebebeb 0)`,
               }}
             ></div>
-
             <div
               className="homepage-progress-bar3"
               style={{
-                background: ` radial-gradient(closest-side, white 90%, transparent 91% 100%), conic-gradient(#ffa756 68%, #ebebeb 0)`,
+                background: ` radial-gradient(closest-side, white 90%, transparent 91% 100%), conic-gradient(#FDB85D 68%, #ebebeb 0)`,
               }}
             ></div>
           </div>
