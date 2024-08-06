@@ -1,0 +1,21 @@
+.user-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem 0rem;
+}
+
+.user-alignLabels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6f7ff;
+  padding: 0px 1rem;
+}
+
+.user-labels {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.16px;
+  text-align: left;
+  color: #3d5a80;
+}
