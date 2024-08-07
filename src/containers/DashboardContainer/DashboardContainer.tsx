@@ -16,6 +16,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import { routesArr } from "../../Routes/Routes";
 import {
+  Category,
   Dashboard,
   Home,
   Orders,
@@ -45,6 +46,7 @@ const DashboardContainer: React.FC = () => {
     { title: "Products", image: icon3, imageA: icon3a },
     { title: "Vendors", image: icon4, imageA: icon2a },
     { title: "Orders", image: icon5, imageA: icon5a },
+    { title: "Category", image: icon5, imageA: icon5a },
     { title: "Logout", image: icon6, imageA: icon6a },
   ];
   const [pageTitle, setPageTitle] = useState<string>("");
@@ -72,6 +74,10 @@ const DashboardContainer: React.FC = () => {
         break;
 
       case 5:
+        navigate(Category);
+        break;
+
+      case 6:
         localStorage.clear();
         window.location.reload();
 
@@ -105,6 +111,10 @@ const DashboardContainer: React.FC = () => {
         title = "Welcome To Orders";
         break;
 
+      case Category:
+        title = "Welcome To Category & Sub-Category";
+        break;
+
       default:
         title = "Welcome To Dashboard";
     }
@@ -123,6 +133,9 @@ const DashboardContainer: React.FC = () => {
         return path === Vendors;
       case 4:
         return path === Orders;
+
+      case 5:
+        return path === Category;
 
       default:
         return false;
