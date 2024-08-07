@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import UsersPage from "../../components/UsersPage/UsersPage";
 
 const UsersContainer: React.FC = () => {
+  const [isActive, setIsActive] = useState<boolean>(false);
+
+  const handleActive = () => {
+    setIsActive(!isActive);
+  };
+
   const labels: string[] = [
     "S No.",
     "Customer Name",
@@ -10,7 +16,13 @@ const UsersContainer: React.FC = () => {
     "Signup Date",
     "Last Login",
   ];
-  return <UsersPage labels={labels} />;
+  return (
+    <UsersPage
+      isActive={isActive}
+      handleActive={handleActive}
+      labels={labels}
+    />
+  );
 };
 
 export default UsersContainer;
