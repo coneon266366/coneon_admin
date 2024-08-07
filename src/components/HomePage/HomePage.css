@@ -1,0 +1,105 @@
+.homepage {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.homepage-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 0rem;
+}
+
+.homepage-card {
+  background-color: #ffffff;
+  width: calc(16%);
+  box-sizing: border-box;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  box-shadow: 0px 4px 20px 0px #0000000d;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.homepage-cardTitle {
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.16px;
+  text-align: left;
+  color: #878787;
+  margin: 0;
+}
+
+.homepage-cardValue {
+  font-family: Outfit;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25.2px;
+  text-align: left;
+  color: #262626;
+  margin: 8px 0px 0px 0px;
+}
+
+.homepage-chart-div1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 2rem 0rem;
+  gap: 4rem;
+  height: 400px;
+}
+
+.homepage-chart1 {
+  width: 60%;
+  height: 100%;
+}
+
+.homepage-progress-container {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-progress-bar1 {
+  width: 80%;
+  height: 100%;
+  border-radius: 50%;
+  color: #739ef1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease-in;
+}
+
+.homepage-progress-bar2 {
+  width: 65%;
+  height: 80%;
+  border-radius: 50%;
+  color: #ff7374;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* left: calc(10%); */
+}
+
+.homepage-progress-bar3 {
+  width: 50%;
+  height: 60%;
+  border-radius: 50%;
+  color: #fdb85d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* left: calc(10%); */
+}
