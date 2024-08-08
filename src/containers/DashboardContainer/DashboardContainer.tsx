@@ -16,6 +16,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import { routesArr } from "../../Routes/Routes";
 import {
+  AddProduct,
   Category,
   Dashboard,
   Home,
@@ -115,6 +116,10 @@ const DashboardContainer: React.FC = () => {
         title = "Welcome To Category & Sub-Category";
         break;
 
+      case AddProduct:
+        title = "Add Product";
+        break;
+
       default:
         title = "Welcome To Dashboard";
     }
@@ -128,7 +133,7 @@ const DashboardContainer: React.FC = () => {
       case 1:
         return path === Users;
       case 2:
-        return path === Products;
+        return path === Products || path === AddProduct;
       case 3:
         return path === Vendors;
       case 4:
