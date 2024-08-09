@@ -3,13 +3,36 @@ import "./AddProductPage.css";
 import icon1 from "../../assets/productPageImages/search.svg";
 import ProductVariants from "./ProductVariants";
 
+interface productColors {
+  colorName: string;
+}
+
 interface AddProductPageProps {
   isSelected: number;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleIsVariants: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  showColors: boolean;
+  handleShowColors: () => void;
+  colors: productColors[];
+  colorInput: string;
+  handleColorSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleColorChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  selectedColors: string[];
+  // sizes: string[];
 }
 
 const AddProductPage: React.FC<AddProductPageProps> = (props) => {
-  const { isSelected, handleChange } = props;
+  const {
+    isSelected,
+    handleIsVariants,
+    showColors,
+    handleShowColors,
+    colors,
+    colorInput,
+    handleColorSearch,
+    handleColorChange,
+    selectedColors,
+    // sizes,
+  } = props;
   return (
     <>
       <div className="add-product-container">
@@ -88,7 +111,7 @@ const AddProductPage: React.FC<AddProductPageProps> = (props) => {
                     name="selection"
                     value={1}
                     checked={isSelected === 1}
-                    onChange={handleChange}
+                    onChange={handleIsVariants}
                     className={isSelected === 1 ? "add-product-radio1" : ""}
                   />
                   <label className="add-product-text2">Yes</label>
@@ -100,7 +123,7 @@ const AddProductPage: React.FC<AddProductPageProps> = (props) => {
                     name="selection"
                     value={0}
                     checked={isSelected === 0}
-                    onChange={handleChange}
+                    onChange={handleIsVariants}
                     className={isSelected === 0 ? "add-product-radio1" : ""}
                   />
                   <label className="add-product-text2">No</label>
@@ -112,7 +135,7 @@ const AddProductPage: React.FC<AddProductPageProps> = (props) => {
           <div className="add-product-box2-div1">
             <p className="add-product-label">Choose variation type:</p>
             <div className="add-product-box3">
-              <div>
+              <div style={{ position: "relative" }}>
                 <p
                   className="add-product-text2"
                   style={{ margin: "0px 0px 4px 0px" }}
@@ -123,9 +146,37 @@ const AddProductPage: React.FC<AddProductPageProps> = (props) => {
                   type="text"
                   className="add-product-inputMain"
                   placeholder="Search Colors"
+                  value={colorInput}
+                  onChange={handleColorSearch}
+                  onClick={handleShowColors}
                 />
+
+                {showColors && (
+                  <div className="add-product-dropdown">
+                    {colors.map((color, index) => {
+                      return (
+                        <div key={index} className="add-product-dropdown-align">
+                          <input
+                            type="checkbox"
+                            value={color.colorName}
+                            className="add-product-dropdown-check"
+                            style={{ accentColor: `${color.colorName}` }}
+                            onChange={handleColorChange}
+                            checked={selectedColors.includes(color.colorName)}
+                          />
+                          <p
+                            className="add-product-text2"
+                            style={{ margin: 0 }}
+                          >
+                            {color.colorName}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
-              <div>
+              <div style={{ position: "relative" }}>
                 <p
                   className="add-product-text2"
                   style={{ margin: "0px 0px 4px 0px" }}
@@ -137,6 +188,30 @@ const AddProductPage: React.FC<AddProductPageProps> = (props) => {
                   className="add-product-inputMain"
                   placeholder="Search Sizes"
                 />
+                {/* {colorInput.length > 0 && (
+                  <div className="add-product-dropdown">
+                    {colors.map((color, index) => {
+                      return (
+                        <div key={index} className="add-product-dropdown-align">
+                          <input
+                            type="checkbox"
+                            value={color.colorName}
+                            className="add-product-dropdown-check"
+                            style={{ accentColor: `${color.colorName}` }}
+                            onChange={handleColorChange}
+                            checked={selectedColors.includes(color.colorName)}
+                          />
+                          <p
+                            className="add-product-text2"
+                            style={{ margin: 0 }}
+                          >
+                            {color.colorName}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )} */}
               </div>
               <div>
                 <p
@@ -176,6 +251,22 @@ const AddProductPage: React.FC<AddProductPageProps> = (props) => {
           that each variation child requires an image to be active on the CONEON
           website.
         </p>
+
+        <div className="add-product-checkedBox">
+          <div className="add-product-colorBoxAlign">
+            {selectedColors.map((selectedColor, index) => {
+              return (
+                <div
+                  key={index}
+                  className="add-product-colorBox"
+                  style={{ backgroundColor: `${selectedColor}` }}
+                >
+                  <img />
+                </div>
+              );
+            })}
+          </div>
+        </div>
 
         <ProductVariants />
       </div>
